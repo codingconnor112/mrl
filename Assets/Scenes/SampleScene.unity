@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 658668784}
   - component: {fileID: 658668783}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Vera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1563,7 +1563,7 @@ GameObject:
   - component: {fileID: 1819948174}
   - component: {fileID: 1819948173}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Sadie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
