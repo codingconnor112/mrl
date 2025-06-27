@@ -20,7 +20,8 @@ public class menuoption : MonoBehaviour
     public string dropoffclass;
     public string classfunction;
 
-    public bool selectbefore=true;
+    public bool selectbefore=false;
+    public float startup = 0;
  
     // Start is called before the first frame update
     void Start()
@@ -74,7 +75,7 @@ public class menuoption : MonoBehaviour
             selfimage.sprite = deactivated;
         }
 
-        if (Input.GetAxisRaw("Submit")==1&&selectbefore)
+        if (Input.GetAxisRaw("Submit")==1&&selectbefore&&startup==0)
         {
             if (selected)
             {
@@ -82,9 +83,32 @@ public class menuoption : MonoBehaviour
             }
         }
 
+        //float loudness=getloudnessfromaudioclip(Microphone.GetPosition(Microphone.devices[0]),Microphone.Start(Microphone.devices[0], true, 20, AudioSettings.outputSampleRate));
+        
     }
     private void LateUpdate()
     {
         selectbefore = !(Input.GetAxisRaw("Submit") == 1);
+    }
+    private void FixedUpdate()
+    {
+        if (startup > 0)
+        {
+            startup -= 1;
+        }
+    }
+    public float getloudnessfromaudioclip(int clipPosition, AudioClip clip)
+    {
+        int startposition = clipPosition - 60;
+        float[] wavedata = new float[60];
+        clip.GetData(wavedata, startposition);
+
+        float totalLoudness = 0;
+        for(int i = 0; i < 60; i++)
+        {
+            totalLoudness += Mathf.Abs(wavedata[i]);
+        }
+
+        return totalLoudness / 60;
     }
 }

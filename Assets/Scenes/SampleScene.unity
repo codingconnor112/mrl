@@ -752,6 +752,7 @@ MonoBehaviour:
   dropoffclass: gameloop
   classfunction: winstonfight
   selectbefore: 1
+  startup: 30
 --- !u!1 &157000903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,6 +1156,7 @@ MonoBehaviour:
   dropoffclass: gameloop
   classfunction: sadiefight
   selectbefore: 1
+  startup: 0
 --- !u!114 &379806616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2025,6 +2027,7 @@ MonoBehaviour:
   sadie: {fileID: 83422783}
   vera: {fileID: 33478298}
   battle: {fileID: 1853962776}
+  flavortext: {fileID: 1778805420}
 --- !u!1 &1261075207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,6 +2518,7 @@ MonoBehaviour:
   dropoffclass: gameloop
   classfunction: verafight
   selectbefore: 1
+  startup: 0
 --- !u!114 &1649240424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2728,7 +2732,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778805418}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2761,7 +2765,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '*Mr.L II rolls around at the speed of sound'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3385,7 +3389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1939665956
 RectTransform:
   m_ObjectHideFlags: 0
