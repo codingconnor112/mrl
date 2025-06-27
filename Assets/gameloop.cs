@@ -10,6 +10,7 @@ public class gameloop : MonoBehaviour
     public RectTransform vera;
     public GameObject battle;
     public TMP_Text flavortext;
+    public Slider tpbar;
     IEnumerator flavortextwait(string text)
     {
         flavortext.text = text;

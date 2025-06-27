@@ -21,7 +21,7 @@ public class menuoption : MonoBehaviour
     public string classfunction;
 
     public bool selectbefore=false;
-    public float startup = 0;
+    public float startup = 1;
  
     // Start is called before the first frame update
     void Start()
