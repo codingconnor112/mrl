@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 public class menuoption : MonoBehaviour
 {
     public Sprite activated;
@@ -19,6 +19,9 @@ public class menuoption : MonoBehaviour
     public GameObject dropoff;
     public string dropoffclass;
     public string classfunction;
+
+    public bool selectbefore=true;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +31,7 @@ public class menuoption : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        mouse_selected = EventSystem.current.IsPointerOverGameObject();
         if (selected && Input.GetAxis("Vertical") == 1)
         {
             if (up != null)
@@ -62,7 +65,7 @@ public class menuoption : MonoBehaviour
             }
         }
 
-        if (mouse_selected || selected)
+        if (selected)
         {
             selfimage.sprite = activated;
         }
@@ -71,32 +74,17 @@ public class menuoption : MonoBehaviour
             selfimage.sprite = deactivated;
         }
 
-        if (Input.GetAxis("Submit")==1)
+        if (Input.GetAxisRaw("Submit")==1&&selectbefore)
         {
             if (selected)
             {
                 dropoff.GetComponent(dropoffclass).SendMessage(classfunction);
             }
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (mouse_selected)
-            {
-                dropoff.GetComponent(dropoffclass).SendMessage(classfunction);
-            }
-        }
+
     }
-    private void OnMouseEnter()
+    private void LateUpdate()
     {
-        mouse_selected = true;
-    }
-    private void OnMouseExit()
-    {
-        mouse_selected = false;
-    }
-    private void OnDisable()
-    {
-        selected = false;
-        mouse_selected = false;
+        selectbefore = !(Input.GetAxisRaw("Submit") == 1);
     }
 }
